@@ -4,13 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "./", 
+  base: "/misspaninipress.github.io/",
   build: {
     outDir: "dist",
-  },
-  server: {
-    host: "::",
-    port: 8080,
   },
   plugins: [
     react(),
