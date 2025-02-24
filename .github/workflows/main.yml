@@ -1,12 +1,11 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
+      - name: Build project
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -28,3 +27,4 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          clean: true
